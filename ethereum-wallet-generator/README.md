@@ -6,7 +6,7 @@ $ node index.js
 mnemonic : daughter mimic all potato spare scheme term claim acid segment either ritual
 
 private key 0: 0xcc9c0c2a98e539a19cfb44f674b4a1fb1f07e0072184cbdcd0524136542ea060
-address     0: 0x0c9b5d5c6f4f095da9db0685689b6a22b0bf17c6
+address     0: 0x0c9B5d5C6f4f095DA9Db0685689b6a22b0bF17C6
 
 private key 1: 0x119fbc9435691491c542386b7630dc2fa75f5da6e4b9be96ff8ebf4b4651b1b6
 address     1: 0x1ce28c56c1eb78c2d8c0059f37f6bf2b21484616
