@@ -1,0 +1,102 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xCE6e2695419Da12Ec71DD5773306bbCB6238Ff55",
+    "txHash": "0xaa506692902495492c8351b096bef1904658231a1282eb1988aa404dbeadf8da"
+  },
+  "proxies": [
+    {
+      "address": "0x94309F12493b99D6b21104ca9B33973b1c9c74ea",
+      "txHash": "0xfff7d0f1a5f754a206732f9b059406e6bdc94c9af791f4ee21c89f0823d3cd61",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "0decfdd312a8c97185432e14d77cf2259a66744ec9b7eaa62bc2b25ad66a70f4": {
+      "address": "0x45BcF7132Ef36a0d0951F333fd69925CB3dB4fd5",
+      "txHash": "0xb1ec5243cb00776b745daa0e15838966493f09c43b4c573105afa8bd404d78a7",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+          },
+          {
+            "label": "admin",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "NFTCreator",
+            "src": "contracts/NFTCreator.sol:9"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "9d436074d9a5a7088c69233db48bafd4d5d34d3d0c85df098ef58077e5bf3e29": {
+      "address": "0xFB55A7162D6D007Eb0ce63c1A571318A207C404B",
+      "txHash": "0xefb7e673209989980ada24f13c5222114c886355831803db08158609916adb49",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+          },
+          {
+            "label": "admin",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "NFTCreator",
+            "src": "contracts/NFTCreator.sol:9"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

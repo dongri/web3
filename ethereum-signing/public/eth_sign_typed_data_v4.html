@@ -14,10 +14,18 @@
 <body>
   <div>
     <h1>Sign Typed Data V4</h1>
+    <input id="executor" placeholder="Executor: 0x" value="">
     <button onclick="sign_typed_data_v4()">sign typed data v4</button>
   </div>
   <div>
     <textarea id="result" placeholder="Result"></textarea>
+  </div>
+  <div>
+    <h4>Call Contract</h4>
+    <button onclick="call_contract()">call contract</button>
+  </div>
+  <div>
+    <a href="https://eips.ethereum.org/EIPS/eip-712" target="_blank">EIP-712: Typed structured data hashing and signing</a>
   </div>
 </body>
 </html>

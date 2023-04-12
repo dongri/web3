@@ -17,16 +17,16 @@ div {
   width: 100%;
 }
 input {
-  margin: 5px;
+  margin: 10px 0;
   padding: 10px;
 }
 textarea {
-  margin: 5px;
+  margin: 10px 0;
   padding: 10px;
   height: 100px;
 }
 button {
-  margin: 5px;
+  margin: 10px 0;
   padding: 10px;
   background-color: #4CAF50;
   color: white;

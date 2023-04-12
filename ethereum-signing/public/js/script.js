@@ -25,18 +25,6 @@ const setupWeb3 = async () => {
   }
 }
 
-const personal_sign = async () => {
-  const {web3, chainId, account} = await setupWeb3()
-  const message = document.getElementById('message').value
-  web3.eth.personal.sign(message, account, (err, signature) => {
-    if (err) {
-      $result(err.message)
-    } else {
-      $result(signature)
-    }
-  })
-}
-
 const eth_sign = async () => {
   const {web3, chainId, account} = await setupWeb3()
   const message = document.getElementById('message').value
@@ -49,73 +37,47 @@ const eth_sign = async () => {
   })
 }
 
+const personal_sign = async () => {
+  const {web3, chainId, account} = await setupWeb3()
+  const message = document.getElementById('message').value
+  web3.eth.personal.sign(message, account, (err, signature) => {
+    if (err) {
+      $result(err.message)
+    } else {
+      $result(signature)
+    }
+  })
+}
+
 const sign_typed_data_v4 = async () => {
   const {web3, chainId, account} = await setupWeb3()
   if (chainId !== 5) {
-    result('Please switch to Goerli testnet')
+    $result('Please switch to Goerli testnet')
     return
   }
+  const executor = document.getElementById('executor').value
   const msgParams = JSON.stringify({
     domain: {
-      name: 'Mail',
+      name: 'CreateNFT',
       version: '1',
       chainId: 5,
-      verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
+      verifyingContract: '0x94309F12493b99D6b21104ca9B33973b1c9c74ea',
     },
-
-    // Defining the message signing data content.
     message: {
-      /*
-       - Anything you want. Just a JSON Blob that encodes the data you want to send
-       - No required fields
-       - This is DApp Specific
-       - Be as explicit as possible when building out the message schema.
-      */
-      contents: 'Hello, Bob!',
-      attachedMoneyInEth: 4.2,
-      from: {
-        name: 'Cow',
-        wallets: [
-          '0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826',
-          '0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF',
-        ],
-      },
-      to: [
-        {
-          name: 'Bob',
-          wallets: [
-            '0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB',
-            '0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57',
-            '0xB0B0b0b0b0b0B000000000000000000000000000',
-          ],
-        },
-      ],
+      executor: executor,
+      contents: 'Executor can create NFTs with this message',
     },
-    // Refers to the keys of the *types* object below.
-    primaryType: 'Mail',
+    primaryType: 'Creator',
     types: {
-      // TODO: Clarify if EIP712Domain refers to the domain the contract is hosted on
       EIP712Domain: [
         { name: 'name', type: 'string' },
         { name: 'version', type: 'string' },
         { name: 'chainId', type: 'uint256' },
         { name: 'verifyingContract', type: 'address' },
       ],
-      // Not an EIP712Domain definition
-      Group: [
-        { name: 'name', type: 'string' },
-        { name: 'members', type: 'Person[]' },
-      ],
-      // Refer to PrimaryType
-      Mail: [
-        { name: 'from', type: 'Person' },
-        { name: 'to', type: 'Person[]' },
+      Creator: [
+        { name: 'executor', type: 'address' },
         { name: 'contents', type: 'string' },
-      ],
-      // Not an EIP712Domain definition
-      Person: [
-        { name: 'name', type: 'string' },
-        { name: 'wallets', type: 'address[]' },
       ],
     },
   });
@@ -133,3 +95,15 @@ const sign_typed_data_v4 = async () => {
   })
 }
 
+
+const call_contract = async () => {
+  const {web3, chainId, account} = await setupWeb3()
+  const contract = new web3.eth.Contract(ContractABI, ContractAddressGoerli)
+  const signature = document.getElementById('result').value
+  console.log(signature)
+  const result = await contract.methods.createNFT(signature).call({from: account})
+  $result(JSON.stringify(result))
+}
+
+const ContractABI = [{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes","name":"signature","type":"bytes"}],"name":"createNFT","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes","name":"signature","type":"bytes"}],"name":"getSigner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_newAdmin","type":"address"}],"name":"setAdmin","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+const ContractAddressGoerli = '0x94309F12493b99D6b21104ca9B33973b1c9c74ea';
