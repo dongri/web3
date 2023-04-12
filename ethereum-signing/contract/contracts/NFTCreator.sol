@@ -12,12 +12,13 @@ contract NFTCreator is Initializable {
 		admin = msg.sender;
 	}
 
-	function createNFT(bytes calldata signature) public view returns (bool) {
-		require((getSigner(signature) == admin), 'invalid authorization signature');
+	function createNFT(bytes calldata signature, uint256 deadline) public view returns (bool) {
+		require(deadline > block.timestamp, "invalid deadline");
+		require((getSigner(signature, deadline) == admin), 'invalid authorization signature');
 		return true;
 	}
 
-	function getSigner(bytes calldata signature) public view returns (address) {
+	function getSigner(bytes calldata signature, uint256 deadline) public view returns (address) {
 		require(admin != address(0), 'whitelist not enabled');
 
 		string memory name = "CreateNFT";
@@ -28,7 +29,7 @@ contract NFTCreator is Initializable {
 		string memory contents = "Executor can create NFTs with this message";
 
 		string memory EIP712_DOMAIN_TYPE = "EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)";
-		string memory CREATOR_TYPE = "Creator(address executor,string contents)";
+		string memory CREATOR_TYPE = "Creator(address executor,string contents,uint256 deadline)";
 
 		bytes32 DOMAIN_SEPARATOR = keccak256(
 			abi.encode(
@@ -47,7 +48,8 @@ contract NFTCreator is Initializable {
 					abi.encode(
 						keccak256(abi.encodePacked(CREATOR_TYPE)),
 						msg.sender,
-						keccak256(abi.encodePacked(contents))
+						keccak256(abi.encodePacked(contents)),
+						deadline
 					)
 				)
 			)

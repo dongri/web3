@@ -56,6 +56,7 @@ const sign_typed_data_v4 = async () => {
     return
   }
   const executor = document.getElementById('executor').value
+  const deadline = Date.now() + 100000
   const msgParams = JSON.stringify({
     domain: {
       name: 'CreateNFT',
@@ -66,6 +67,7 @@ const sign_typed_data_v4 = async () => {
     message: {
       executor: executor,
       contents: 'Executor can create NFTs with this message',
+      deadline: deadline,
     },
     primaryType: 'Creator',
     types: {
@@ -78,6 +80,7 @@ const sign_typed_data_v4 = async () => {
       Creator: [
         { name: 'executor', type: 'address' },
         { name: 'contents', type: 'string' },
+        { name: 'deadline', type: 'uint256' },
       ],
     },
   });
@@ -91,19 +94,20 @@ const sign_typed_data_v4 = async () => {
       $result(err.message)
     } else {
       $result(result.result)
+      document.getElementById('deadline').value = deadline
     }
   })
 }
-
 
 const call_contract = async () => {
   const {web3, chainId, account} = await setupWeb3()
   const contract = new web3.eth.Contract(ContractABI, ContractAddressGoerli)
   const signature = document.getElementById('result').value
-  console.log(signature)
-  const result = await contract.methods.createNFT(signature).call({from: account})
+  const deadline = document.getElementById('deadline').value
+  alert(deadline)
+  const result = await contract.methods.createNFT(signature, deadline).call({from: account})
   $result(JSON.stringify(result))
 }
 
-const ContractABI = [{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes","name":"signature","type":"bytes"}],"name":"createNFT","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes","name":"signature","type":"bytes"}],"name":"getSigner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_newAdmin","type":"address"}],"name":"setAdmin","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+const ContractABI = [{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes","name":"signature","type":"bytes"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"createNFT","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes","name":"signature","type":"bytes"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"getSigner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_newAdmin","type":"address"}],"name":"setAdmin","outputs":[],"stateMutability":"nonpayable","type":"function"}];
 const ContractAddressGoerli = '0x94309F12493b99D6b21104ca9B33973b1c9c74ea';
