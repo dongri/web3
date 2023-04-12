@@ -104,7 +104,6 @@ const call_contract = async () => {
   const contract = new web3.eth.Contract(ContractABI, ContractAddressGoerli)
   const signature = document.getElementById('result').value
   const deadline = document.getElementById('deadline').value
-  alert(deadline)
   const result = await contract.methods.createNFT(signature, deadline).call({from: account})
   $result(JSON.stringify(result))
 }
