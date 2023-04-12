@@ -1,4 +1,4 @@
-const result = (text) => {
+const $result = (text) => {
   document.getElementById('result').innerHTML = text
 }
 
@@ -30,9 +30,9 @@ const personal_sign = async () => {
   const message = document.getElementById('message').value
   web3.eth.personal.sign(message, account, (err, signature) => {
     if (err) {
-      result(err.message)
+      $result(err.message)
     } else {
-      result(signature)
+      $result(signature)
     }
   })
 }
@@ -42,15 +42,19 @@ const eth_sign = async () => {
   const message = document.getElementById('message').value
   web3.eth.sign(web3.utils.sha3(message), account, (err, signature) => {
     if (err) {
-      result(err.message)
+      $result(err.message)
     } else {
-      result(signature)
+      $result(signature)
     }
   })
 }
 
 const sign_typed_data_v4 = async () => {
   const {web3, chainId, account} = await setupWeb3()
+  if (chainId !== 5) {
+    result('Please switch to Goerli testnet')
+    return
+  }
   const msgParams = JSON.stringify({
     domain: {
       name: 'Mail',
@@ -122,9 +126,9 @@ const sign_typed_data_v4 = async () => {
     from: account
   }, (err, result) => {
     if (err) {
-      alert(err.message)
+      $result(err.message)
     } else {
-      document.getElementById('result').innerHTML = result.result
+      $result(result.result)
     }
   })
 }

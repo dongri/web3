@@ -5,20 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ethereum Signing</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./web3.min.1.9.0.js"></script>
-  <script src="./script.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/web3.min.1.9.0.js"></script>
+  <script src="./js/script.js"></script>
   <style>
   </style>
 </head>
 <body>
   <div>
-    <h1>Personal Sign</h1>
-    <textarea id="message" placeholder="Message">Hello
-你好
-こんにちは
-안녕</textarea>
-    <button onclick="personal_sign()">Personal Sign</button>
+    <h1>Sign Typed Data V4</h1>
+    <input type="button" value="sign typed data v4" onclick="sign_typed_data_v4()">
   </div>
   <div>
     <textarea id="result" placeholder="Result"></textarea>
