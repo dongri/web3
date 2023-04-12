@@ -56,7 +56,8 @@ const sign_typed_data_v4 = async () => {
     return
   }
   const executor = document.getElementById('executor').value
-  const deadline = Date.now() + 100000
+  const unixTimestamp = Math.floor(Date.now() / 1000)
+  const deadline = unixTimestamp + 60 * 60 // 1 hour from now
   const msgParams = JSON.stringify({
     domain: {
       name: 'CreateNFT',
