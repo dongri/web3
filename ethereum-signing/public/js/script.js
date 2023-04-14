@@ -11,7 +11,7 @@ const setupWeb3 = async () => {
     } else if (window.web3) {
       currentProvider = window.web3.currentProvider
     } else {
-      window.open('https://metamask.app.link/dapp/nft-swap.example.com', '_blank');
+      window.open('https://metamask.app.link/dapp/your.example.com', '_blank');
     }
     if (currentProvider) {
       const web3 = new Web3(currentProvider)

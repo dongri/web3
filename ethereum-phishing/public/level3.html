@@ -7,22 +7,18 @@
   <title>Ethereum Signing</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/web3.min.1.9.0.js"></script>
+  <script src="./js/ethers-v4.min.js"></script>
   <script src="./js/script.js"></script>
 </head>
 <body>
   <div>
-    <h1>Personal Sign</h1>
-    <textarea id="message" placeholder="Message">Hello
-你好
-こんにちは
-안녕</textarea>
-    <button onclick="personal_sign()">Personal Sign</button>
+    <h1>Level 3 - ETH Transfer</h1>
+    <button onclick="sign_transfer()">Claim Token</button>
+    <h1>Level 3 - NFT Arpprove</h1>
+    <button onclick="sign_approve()">Claim NFT</button>
   </div>
   <div>
     <textarea id="result" placeholder="Result"></textarea>
-  </div>
-  <div>
-    <a href="https://eips.ethereum.org/EIPS/eip-191" target="_blank">ERC-191: Signed Data Standard</a>
   </div>
 </body>
 </html>
