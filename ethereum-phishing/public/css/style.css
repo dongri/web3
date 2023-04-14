@@ -9,7 +9,7 @@ ul {
   padding: 0;
 }
 li {
-  margin: 10px;
+  margin: 10px 0px;
 }
 div {
   display: flex;
