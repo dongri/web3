@@ -12,13 +12,25 @@
 </head>
 <body>
   <div>
-    <h1>Level 3 - ETH Transfer</h1>
-    <button onclick="sign_transfer()">Claim Token</button>
-    <h1>Level 3 - NFT Arpprove</h1>
-    <button onclick="sign_approve()">Claim NFT</button>
+    <h1>Level 3</h1>
+    <div class="title">Have them sign all transactions</div>
+    <div>
+      <img src="./img/uni.png" style="width: 200px;"/>
+    </div>
+    <button onclick="sign_transfer()" class="level1-free-mint">Claim 100 $UNI</button>
+    <div class="metamask">
+      <img src="./img/level3.png"/>
+    </div>
   </div>
-  <div>
-    <textarea id="result" placeholder="Result"></textarea>
+  <div class="explanation">
+    ハッカーはあなたの資産を盗む任意のトランザクションを生成して、あなたに署名を求める、
+    Metamask上はトランザクションを送るUIではなく署名だけのUIなので気にせず署名をする。
+    署名するとこのトランザクションを誰が実行しても良いことになる。
+    ハッカーは入手した署名済みのトランザクションをハッカーが用意したサーバー送って、トランザクションを実行して資産盗むだろう。
+  </div>
+  <div class="warning">
+    <h3 style="text-align: center;">!!! Warning !!!</h2>
+    これはデモサイトです。起動したMetamaskで承認ボタンを絶対に押さないでください。
   </div>
 </body>
 </html>

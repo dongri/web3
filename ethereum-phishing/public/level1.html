@@ -11,11 +11,21 @@
 </head>
 <body>
   <div>
-    <h1>Level 1 - $ETH Transfer</h1>
-    <button onclick="eth_transfer()">Claim</button>
+    <h1>Level 1</h1>
+    <div class="title">Create Send ETH Transaction</div>
+    <div class="nft">
+      <img src="./img/BAYC.png"/>
+      <br>
+      989/1000
+    </div>
+    <button onclick="eth_transfer()" class="level1-free-mint">Free Mint</button>
   </div>
-  <div>
-    <textarea id="result" placeholder="Result"></textarea>
+  <div class="explanation">
+    ハッカーのアドレスにトークン, NFTを送るようなトランザクションを作ってあなたに承認させてもらう。良く確認せず承認するとトークンとNFTが失われます。
+  </div>
+  <div class="warning">
+    <h3 style="text-align: center;">!!! Warning !!!</h2>
+    これはデモサイトです。起動したMetamaskで承認ボタンを絶対に押さないでください。
   </div>
 </body>
 </html>

@@ -11,13 +11,26 @@
 </head>
 <body>
   <div>
-    <h1>Level 2 - Approve Token</h1>
-    <button onclick="approve_token()">Claim Token</button>
-    <h1>Level 2 - Approve NFT</h1>
-    <button onclick="approve_nft()">Claim NFT</button>
+    <h1>Level 2</h1>
+    <div class="title">NT, NFT Approval</div>
+    <div class="nft">
+      <img src="./img/cryptopunk.png"/>
+      <br>
+      989/1000
+    </div>
+    <button onclick="approve_nft()" class="level1-free-mint">Free Mint</button>
+    <div class="metamask">
+      <img src="./img/level2.png"/>
+    </div>
   </div>
-  <div>
-    <textarea id="result" placeholder="Result"></textarea>
+  <div class="explanation">
+    ハッカーはトークンやNFTのコントロール権利を取得するトランザクションを生成にしてあなたに承認させてもらう。
+    承認するとハッカーのスマートコントラクトに権利譲渡されて、あなたのトークン、NFTをハッカーのウォレットに転送されてしまう。
+    あなたが気付いて取り消し(Revoke)を行うこともできるけど、一連の処理を自動化されたボットには勝てないだろう。
+  </div>
+  <div class="warning">
+    <h3 style="text-align: center;">!!! Warning !!!</h2>
+    これはデモサイトです。起動したMetamaskで承認ボタンを絶対に押さないでください。
   </div>
 </body>
 </html>

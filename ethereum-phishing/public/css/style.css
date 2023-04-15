@@ -2,6 +2,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   max-width: 500px;
   margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 100px;
 }
 ul {
   list-style-type: none;
@@ -12,8 +15,6 @@ li {
   margin: 10px 0px;
 }
 div {
-  display: flex;
-  flex-direction: column;
   width: 100%;
 }
 input {
@@ -33,4 +34,77 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+.explanation {
+  border-top: 1px solid #CCC;
+  padding-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.warning {
+  color: red;
+  text-align: left;
+  border-top: 1px solid #CCC;
+  padding-top: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+/* Level 0 */
+.metamask {
+  margin-top: 50px;
+  text-align: center;
+}
+.metamask img {
+  width: 307px;
+  border: 1px solid #ccc;
+}
+input.mnemonic {
+  position: relative;
+  top: -187px;
+  width: 254px;
+  left: 0px;
+  height: 0px;
+  border: none;
+}
+.mnemonic:focus{
+  outline: none;
+}
+button.mnemonic {
+  margin: 10px 0;
+  padding: 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: -179px;
+  width: 233px;
+  left: 0px;
+  height: 37px;
+  border: none;
+  background: content-box;
+}
+
+/* Level 1 */
+.nft {
+  text-align: center;
+}
+.nft img {
+  width: 260px;
+  border: 1px solid #ccc;
+}
+
+button.level1-free-mint {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
 }

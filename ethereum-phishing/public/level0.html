@@ -4,16 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethereum Phishing</title>
+  <title>Phishing - Level 0</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/web3.min.1.9.0.js"></script>
   <script src="./js/script.js"></script>
 </head>
 <body>
   <div>
-    <h1>Level 0 - Input Mnemonic or Private Key</h1>
-    <textarea id="message" placeholder="12 words or 24 words"></textarea>
-    <button onclick="input_mnemonic()">Claim</button>
+    <h1>Level 0</h1>
+    <div class="title">Steal your mnemonic</div>
+    <div class="metamask">
+      <img src="./img/level0.png"/>
+    </div>
+    <div>
+      <input type="text" id="mnemonic" class="mnemonic" placeholder="12 words or 24 words"></input>
+    </div>
+    <div>
+      <button onclick="stealMnemonic()" class="mnemonic">　</button>
+    </div>
   </div>
+  <div class="explanation">
+    Metamaskを模倣してあなたにニーモニック、秘密鍵を入力させる。入力されたものはハッカーのサーバーに送信されて、もうあなたのウォレットではなくなる。
+  </div>
+  <div class="warning">
+    <h3 style="text-align: center;">!!! Warning !!!</h2>
+    これはデモサイトです。本当のパスフレーズ、ニーモニックフレーズ、秘密鍵を絶対に入力しないでください。
+  </div>
+  <script>
+    window.addEventListener('load', () => {
+      const inputElement = document.querySelector('input[type="text"]');
+      inputElement.focus();
+    });
+  </script>
 </body>
 </html>

