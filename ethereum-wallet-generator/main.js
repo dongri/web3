@@ -1,7 +1,13 @@
 let hdkey = require('ethereumjs-wallet/hdkey');
 let bip39 = require("bip39");
 
-const mnemonic = bip39.generateMnemonic();
+const words = {
+  12: 128,
+  24: 256
+}
+
+const mnemonic = bip39.generateMnemonic(words[24]);
+
 let hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeedSync(mnemonic));
 
 let wallet_hdpath = "m/44'/60'/0'/0/";
