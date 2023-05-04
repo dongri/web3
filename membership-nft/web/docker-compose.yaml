@@ -1,0 +1,15 @@
+version: "3"
+
+volumes:
+  sync-volume:
+    external: true
+
+services:
+
+  web:
+    image: nginx:latest
+    container_name: web
+    volumes:
+      - ./:/usr/share/nginx/html
+    ports:
+      - "127.0.0.1:80:80"
