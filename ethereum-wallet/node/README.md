@@ -1,37 +1,42 @@
 # ethereum-wallet-generator
 
 ```
-$ node index.js
+$ npm install
 
-mnemonic : daughter mimic all potato spare scheme term claim acid segment either ritual
+$ npm run generate
 
-private key 0: 0xcc9c0c2a98e539a19cfb44f674b4a1fb1f07e0072184cbdcd0524136542ea060
-address     0: 0x0c9B5d5C6f4f095DA9Db0685689b6a22b0bF17C6
+> ethereum-wallet-generator@1.0.0 generate
+> node main.js
 
-private key 1: 0x119fbc9435691491c542386b7630dc2fa75f5da6e4b9be96ff8ebf4b4651b1b6
-address     1: 0x1cE28c56C1Eb78C2d8c0059f37f6BF2B21484616
+mnemonic : mosquito useless pitch where cruise sample glimpse material morning consider mushroom change catalog online shield square gorilla exile drive glue clown furnace cheap transfer
 
-private key 2: 0x6fa00c0b23cb49941ab6a11cca018d50a61a3986221ea6a5eb7c2133fe409aaa
-address     2: 0x615ca43d780f1d1148e95782d7fbe4a74fa4ebf8
+address     0: 0xa8405C2969bec2d29A4C1622c450b81dDBd622D6
+private key 0: 0x04a187ac833bf554f7e31cff856ce7e07eea7e7afe724d220fd39ddc0ae2f54e
 
-private key 3: 0x59196293a2fd421c991b214cc04817c342d491f2c59917420fadd3bf2f19ba9f
-address     3: 0xede4d46e6158dd898314ae64a6bc51bf6623bacf
+address     1: 0x0e30E4BEd6F2a0609cCe2126FfEf4E581a8a21A5
+private key 1: 0xc90c916db9ee22c26916044c397ae70a23e41e90e61580bfb127f63bb6f86b41
 
-private key 4: 0x76573c9bcf75f10d6dd3f111785b6b687bc0814c034d80a83c26806f2e620f4a
-address     4: 0x6c1140cef4d52f8653828c301956a75021f18b9e
+address     2: 0x6993EA757A215aC2Ea5C5dBC8112cd976780DB39
+private key 2: 0x02fe17bf20450ffac7a8442a6ecc491f388399bf97e823a0f7a7cc47bd7d835d
 
-private key 5: 0xb326e906febcec4a4d36457b618366da6347930fc40b195ed180ef6a2f70979e
-address     5: 0xa037234362a7deb1ea6172a9541c61706350fe56
+address     3: 0x5b8806e0dCF90065564839Cafc125efe220f278b
+private key 3: 0xe89ce4985e2cfbb7c781a6dd86e40ccb7378e9de88b6633953b8baff8aa3b2a8
 
-private key 6: 0x9e899629ae88be466658d8dcda815e77484630d28c10ed5bc80ab19cf18d0ea6
-address     6: 0x1036c8e4cc9cbcfcd123ab4496275685f177968b
+address     4: 0x91D073c03683f23FB3D7cB1fA2Ea81Ade6ef86b5
+private key 4: 0x6ddb7bdb6ca89b6caf94eec4a2c554fda3fb37f22cfe0f8edb105198a06c7f49
 
-private key 7: 0x6aece2cd4059c0202beb20e3401ebb56482d5af5275777d3add88b06c4219ef3
-address     7: 0xd18e836481c81abdf5deed8d13dd77b5aa93615a
+address     5: 0xf0756E92D9329c07C48672Dd815a98405e4e05D8
+private key 5: 0x3a12ba4c5b095874fd20c755c90673772ce038515dffdbb29d315974e7ba5d0b
 
-private key 8: 0x1960605568d4781d19b95f23c8459d3652be1b5badfbbb474802a04d1b3d52a8
-address     8: 0xfd9bd9830498a822e9b2cb8d3cffa0c00a74641a
+address     6: 0x12fF8aCF51094De6634b6E531a7ba1E1847f7311
+private key 6: 0x5fb5c0c7618bb40df99c189142e6331fd284463e676a007a123ace5eac384566
 
-private key 9: 0xeb131b34b7ff1a694901f802d82cb670f469206a53b82a0bcede01be9d0b3e33
-address     9: 0xa92ae0895faa0ac8ced1cfce923bff88d099a5bd
+address     7: 0x736C358a3C1Cfe44e352bf0C27B8220Eb2316d97
+private key 7: 0x06fba4879e9fbc4bd3a1eaaa4b11a1652493ad173390cf50de8c76f2bf969ea1
+
+address     8: 0xB1F0073168DBAdBFa0F6d4f08881ED73f2A5B3Ec
+private key 8: 0x97bfafe61ce03f88bc803ecaab7e74b7d2db3bb0affa428d9001b8317a6a9830
+
+address     9: 0xE0d0aC39C0Ce3d51D47549660aff13abd309F693
+private key 9: 0x4dce695772fad6547d11e5717f83046ee65292e1cafff339cb7c89c6e24717a3
 ```

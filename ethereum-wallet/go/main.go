@@ -8,11 +8,12 @@ import (
 )
 
 func main() {
+	fmt.Println("")
 	mnemonic, err := hdwallet.NewMnemonic(hdwallet.Word24)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("mnemonic:", mnemonic)
+	fmt.Println("mnemonic :", mnemonic)
 	fmt.Println("")
 	root, err := hdwallet.New(&hdwallet.Config{
 		Mnemonic: mnemonic,
@@ -26,8 +27,8 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println("address     : ", wallet.AddressHex())
-		fmt.Println("private Key : ", wallet.PrivateKeyHex())
+		fmt.Printf("address     %d: %s\n", i, wallet.AddressHex())
+		fmt.Printf("private Key %d: %s\n", i, wallet.PrivateKeyHex())
 		fmt.Println("")
 	}
 }
