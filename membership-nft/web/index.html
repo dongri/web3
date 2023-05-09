@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Membership NFT</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700">
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.3-rc.0/web3.min.js'></script>
+    <script src="js/script.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="content">
+        <div class="title">
+          <h1>Membership NFT</h1>
+        </div>
+
+        <div class="blocks">
+          <div class="block">
+            <div class="image">
+              <img src="https://dummyimage.com/600x400/FFF/000&text=Membership+A" alt="" />
+            </div>
+            <div class="mint">
+              <button class="mint" onclick="mint(1, '0.001')">mint</button>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="image">
+              <img src="https://dummyimage.com/600x400/FFF/000&text=Membership+B" alt="" />
+            </div>
+            <div class="mint">
+              <button class="mint" onclick="mint(2, '0.002')">mint</button>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="image">
+              <img src="https://dummyimage.com/600x400/FFF/000&text=Membership+C" alt="" />
+            </div>
+            <div class="mint">
+              <button class="mint" onclick="mint(3, '0.003')">mint</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="external">
+          <a href="https://testnets.opensea.io/collection/ethosmembership" target="_blank">
+            <img src="img/svg/opensea.svg"/>
+          </a>
+          <a href="https://discord.gg/ENkAsyeMj7" target="_blank">
+            <img src="img/svg/discord.svg"/>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      © <span id="year"></span> Membership NFT
+    </footer>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p><img src="" id="tx-image"/></p>
+        <p id="tx-link"></p>
+      </div>
+    </div>
+
+  </body>
+</html>
