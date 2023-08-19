@@ -21,8 +21,10 @@ console.log();
 for (let i = 0; i < 10; i++) {
   let wallet = hdwallet.derivePath(wallet_hdpath + i).getWallet();
   let privateKey = wallet.getPrivateKeyString();
+  let publicKey = wallet.getPublicKeyString();
   let address = wallet.getChecksumAddressString(); // EIP-55
   console.log('address     ' + i + ': ' + address);
   console.log('private key ' + i + ': ' + privateKey);
+  console.log('public key  ' + i + ': ' + publicKey);
   console.log();
 }
