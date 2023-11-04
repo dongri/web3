@@ -84,7 +84,7 @@ const start = async () => {
 	if (simulation.firstRevert) {
 		console.log(`Simulation Error: ${simulation.firstRevert.error}`)
 	} else {
-		console.log(`Simulation Success: ${blockNumber}}`)
+		console.log(`Simulation Success: ${blockNumber}`)
 	}
 
 	// 8. Send 10 bundles to get this working for the next blocks in case flashbots doesn't become the block producer
